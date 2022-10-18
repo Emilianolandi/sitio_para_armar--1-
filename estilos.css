@@ -1,0 +1,228 @@
+:root {
+    /* Declarar las variables */
+    --naranja: #F90;
+    --blanco: #FFF;
+    --negro: #000;
+    /* camelCase */
+    --grisOscuro: #272727;
+    --grisClaro: #BBB;
+    --amarillo: #f7d011;
+    --naranjaOscuro:#ff8103;
+
+
+}
+
+/* Sass variables
+    $naranja 2007
+*/
+
+body {
+    /* Agregamos un color de fondo parecido a la imagen que ayude a que cuando cargue la imagen no haya mucho "salto visual" */
+    /* Para utilizar una variable usamos var() con el nombre de la variable que querramos */
+    background-color: var(--grisOscuro);
+    /* Imagen de fondo que se repite */
+    background-image: url(images/pattern.jpg);
+    /* Cambiamos la fuente a todo el sitio */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cabecera,
+.contenido {
+    /* Limitamos el ancho de los elementos y los centramos en el medio de la pantalla usando márgenes automáticos 
+        margin: auto; hace lo mismo
+    */
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cabecera h1 {
+    color: var(--naranja);
+    font-size: 20px;
+}
+
+.contenido {
+    background-color: var(--blanco);
+    border-radius: 8px 8px 0 0;
+    color: var(--negro);
+}
+
+/*
+----------------------------
+        NAVEGACIÓN
+----------------------------
+*/
+
+.nav {
+    border-radius: 8px 8px 0 0;
+    background-color: var(--naranja);
+    display: flex;
+    justify-content: space-between;
+}
+
+.lista {
+    list-style-type: none; 
+    /* para sacar los puntitos usamos  list-style-type: none; */
+   display: flex;
+   justify-content: flex-start;
+}
+
+.lista li {
+    padding: 10px;
+    border-right: 1px solid var(--amarillo);
+}
+.lista li:hover{
+    background-color:var(--naranjaOscuro) ;
+}
+.lista a:focus{
+    border: 5px solid var(--grisOscuro);
+    border-radius: 2px;
+    
+}
+
+.lista a {
+    text-decoration: none;
+    /* para sacar subrayado utilizar text-decoration: none; */
+    font-weight: bold;
+    color: var(--blanco);
+}
+
+.nav form {
+   
+    display: flex ;
+    align-items: center;
+    gap: 5px;
+    margin-right: 20px;
+}
+
+/* -------------
+    slider
+
+----------------*/
+.slider{
+    text-align: center;
+    margin-top: 30px;
+   /* max-width: 1000px;  */
+      /* variante si quiero modificar el size de mi imagen */
+ /* margin-left: auto; */
+ /* margin-right: auto; */
+ /* max-width: 1000px;  */
+ position: relative;
+
+}
+.contenedor-circulos{
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+
+}
+.circulo{
+    border-radius: 40px;
+    background-color: var(--grisClaro);
+    padding: 5px;
+}
+.circulo:hover{
+    opacity: 0,5;
+    cursor: pointer;
+}
+/* CATEGORIAS */
+.seccion-categorias{
+    margin: 20px 40px;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    column-gap: 20px;
+    background-color: var(--blanco);
+}
+.categorias h2{
+    text-shadow: 
+                2px 5px var(--naranja)
+                4px 8px var(--grisClaro) ;
+}
+.lista-categorias{
+    list-style-type: none;
+}
+.lista-categorias li{
+    border-bottom: 1px dashed var(--grisOscuro);
+    padding: 5px 0px ;
+}
+
+.mas-vendidos{
+    
+    display: grid;
+    row-gap: 30px;
+    grid-template-columns: repeat(2,1fr);
+}
+.tarjeta-lamparas{
+  
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    max-width: 390px;
+   
+    }
+ .tarjeta-lamparas h2{
+    grid-column: 1/3;
+    }
+
+.new{
+        background-image: linear-gradient(var(--blanco),var(--grisClaro));
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1000px;
+        padding-right: 20px;
+        padding-left: 20px;
+        margin: auto;
+        border-radius: 8px;
+        border: 1px solid var(--grisOscuro);
+    }
+    .boton-suscripcion{
+
+        border: none;
+        background: none;
+    }
+    .boton-suscripcion:hover{
+        text-decoration: underline;
+        color: var(--naranjaOscuro);
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .suscripcion{
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+    .info-new{
+        width: 400px;
+    }
+    .info-new p{
+        text-align: end;
+    }
+    .pie-de-pagina{
+        border-top: var(--grisOscuro);
+        background-color: #cdcbcb;
+        display: grid;
+        grid-template-columns: 250px 250px 250px 1fr;
+        grid-template-rows: 1fr 30px;
+        padding: 20px 40px 0px 40px;
+        margin-top: 40px;
+    }
+    .direccion-HK{
+        border-right: 1px solid var(--grisOscuro);
+    }
+    .direcion-BSAS{
+        padding-left: 10px;
+    }
+    .firma{
+        grid-column: 4/5;
+        grid-row: 2/3;
+        text-align: end;
+    }
+    .firma a{
+        color: var(--grisOscuro);
+    }
+
